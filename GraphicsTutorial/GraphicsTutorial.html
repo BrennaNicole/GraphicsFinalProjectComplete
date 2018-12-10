@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #info{
+            font-family: monospace;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        #info a, .button {color: red; font-weight:bold; text-decoration: underline; cursor:pointer}
+        #hiddenrules {
+            font-family: monospace;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            visibility: hidden;
+        }
+        #hiddenrules a, .button {color: red; font-weight:bold; text-decoration: underline; cursor:pointer}
+
+        #hiddengame {
+            font-family: monospace;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            visibility:hidden;
+        }
+        #hiddengame a, .button {color: red; font-weight:bold; text-decoration: underline; cursor:pointer}
+
+        #countdown {
+            font-family: monospace;
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            visibility: hidden;
+        }
+        #countdown a, .button { color:red; cursor:pointer}
+        #progress {
+            position: absolute;
+            top: 10px;
+            visibility:hidden;
+        }
+   
+    </style>
+</head>
+
+<body onload="main()">
+    <canvas id="myCanvas"></canvas>
+    <script src="three.js"></script>
+    <script src="ManipulateModel.js"></script>
+    <script src="GameTriggers.js"></script>
+
+    <div id="info">
+        Use the arrow keys to rotate your shape<br />
+        Press "S" to change your shape. <br />
+        Press "C" to change your shapes Color<br />
+        <a id="PlayGame" onclick="changeTextRules()">Play Game</a>
+    </div>
+    
+    <div id="countdown"><a id="count">Ready? Start!</a> </div>
+    <div id="hiddenrules">
+        Rules: <br />
+        When the game begins, this text box will display a shape name and a color name. <br />
+        Press "S" to change shape and "C" to change the Color<br />
+        Make sure that the color and shape you select matches the ones requested from the text.<br />
+        Keep this current shape and color until the timer runs out.
+        Would you still like to play? <br />
+        <a id="Confirm" onclick="startTimer()">Yes</a><br />
+        <a id="Deny" onclick="changeTextOriginal()">No</a>
+    </div>
+
+
+</body>
+</html>
